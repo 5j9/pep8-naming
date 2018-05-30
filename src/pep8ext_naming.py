@@ -439,4 +439,5 @@ def is_mixed_case(name):
     stripped_name = name.strip('_')
     head = stripped_name[:1]
     tail = stripped_name[1:]
-    return head.islower() and tail and not (tail.islower() or tail.isdigit())
+    return head.islower() and bool(tail) and not (
+        tail.islower() or tail.isdigit())
